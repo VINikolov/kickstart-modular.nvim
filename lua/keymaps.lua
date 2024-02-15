@@ -55,6 +55,8 @@ vim.keymap.set('n', 'G', 'Gzz')
 vim.keymap.set('n', 'gg', 'ggzz')
 
 vim.keymap.set('n', 'mh', '<C-w>h')
+vim.keymap.set('n', 'mj', '<C-w>j')
+vim.keymap.set('n', 'mk', '<C-w>k')
 vim.keymap.set('n', 'ml', '<C-w>l')
 
 vim.keymap.set('n', '<leader>s', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
