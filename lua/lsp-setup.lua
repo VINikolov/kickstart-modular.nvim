@@ -23,7 +23,7 @@ local on_attach = function(_, bufnr)
         close_events = { 'BufLeave', 'CursorMoved', 'InsertEnter', 'FocusLost' },
         border = 'rounded',
         source = 'always',
-        prefix = ' x',
+        prefix = ' ',
         scope = 'cursor',
       }
       vim.diagnostic.open_float(nil, opts)
