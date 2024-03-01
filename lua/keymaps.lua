@@ -61,4 +61,6 @@ vim.keymap.set('n', 'ml', '<C-w>l')
 
 vim.keymap.set('n', '<leader>s', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
+vim.keymap.set('n', '<leader>ir', "iimport * as React from 'react'<Esc>")
+
 -- vim: ts=2 sts=2 sw=2 et
