@@ -53,6 +53,7 @@ vim.keymap.set('n', '{', '{zz')
 vim.keymap.set('n', '}', '}zz')
 vim.keymap.set('n', 'G', 'Gzz')
 vim.keymap.set('n', 'gg', 'ggzz')
+vim.keymap.set('n', '*', '*zz')
 
 vim.keymap.set('n', 'mh', '<C-w>h')
 vim.keymap.set('n', 'mj', '<C-w>j')
