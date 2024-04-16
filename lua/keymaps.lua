@@ -32,7 +32,16 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 -- vim.keymap.set('n', '<leader>p', '"_dp')
 -- vim.keymap.set('n', '<leader>P', '"_dP')
 vim.keymap.set('n', 'p', '"0p')
-vim.keymap.set('n', 'P', '"0p')
+vim.keymap.set('n', 'P', '"0P')
+vim.keymap.set('v', 'p', '"0p')
+vim.keymap.set('v', 'P', '"0P')
+
+vim.keymap.set('n', 'd', '"0d')
+vim.keymap.set('v', 'd', '"0d')
+vim.keymap.set('n', 'D', '"0D')
+
+vim.keymap.set('n', 'x', '"0x')
+vim.keymap.set('n', 'X', '"0X')
 
 vim.keymap.set('n', '<leader>d', '"_d')
 vim.keymap.set('v', '<leader>d', '"_d')
