@@ -27,24 +27,28 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 -- Custom remaps
 -- vim.keymap.set('v', '<leader>p', "\"_dP")
-vim.keymap.set('n', '<leader>p', '"0p')
-vim.keymap.set('n', '<leader>P', '"0P')
 
-vim.keymap.set('n', '<leader>y', '"+y')
-vim.keymap.set('v', '<leader>y', '"+y')
-vim.keymap.set('n', '<leader>Y', '"+y')
+-- Copy & Paste
+-- vim.keymap.set('n', '<leader>p', '"_dp')
+-- vim.keymap.set('n', '<leader>P', '"_dP')
+vim.keymap.set('n', 'p', '"0p')
+vim.keymap.set('n', 'P', '"0p')
 
 vim.keymap.set('n', '<leader>d', '"_d')
 vim.keymap.set('v', '<leader>d', '"_d')
 
+-- Moving around
 vim.keymap.set('n', 'J', '20j')
 vim.keymap.set('n', 'K', '20k')
 
+-- LazyGit
 vim.keymap.set('n', '<leader>gs', '<Cmd>LazyGit<CR>')
 
+-- Move lines in view mode
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
 vim.keymap.set('v', 'K', ":m '>-2<CR>gv=gv")
 
+-- Keep screen centered
 vim.keymap.set('n', '<C-d>', '<C-d>zz')
 vim.keymap.set('n', '<C-u>', '<C-u>zz')
 vim.keymap.set('n', 'n', 'nzzzv')
@@ -55,13 +59,17 @@ vim.keymap.set('n', 'G', 'Gzz')
 vim.keymap.set('n', 'gg', 'ggzz')
 vim.keymap.set('n', '*', '*zz')
 
+-- Multiple buffers navigation
 vim.keymap.set('n', 'mh', '<C-w>h')
 vim.keymap.set('n', 'mj', '<C-w>j')
 vim.keymap.set('n', 'mk', '<C-w>k')
 vim.keymap.set('n', 'ml', '<C-w>l')
 
+-- Replace text in buffer
 vim.keymap.set('n', '<leader>s', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
-vim.keymap.set('n', '<leader>ir', "iimport * as React from 'react'<Esc>")
+-- React specific keymaps
+vim.keymap.set('n', '<leader>ir', "iimport * as React from 'react'<Esc>", { desc = 'Import react snippet' })
+vim.keymap.set('n', '<leader>wf', 'i{return }<Esc>x%p%f(', { desc = 'Wrap function return statement into body block' })
 
--- vim: ts=2 sts=2 sw=2 et
+-- vim: ts=2 sts=2 sw=2 e
