@@ -29,8 +29,8 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 -- vim.keymap.set('v', '<leader>p', "\"_dP")
 
 -- Copy & Paste
--- vim.keymap.set('n', '<leader>p', '"_dp')
--- vim.keymap.set('n', '<leader>P', '"_dP')
+vim.keymap.set('n', '<leader>p', '"+p')
+vim.keymap.set('n', '<leader>P', '"+P')
 vim.keymap.set('n', 'p', '"0p')
 vim.keymap.set('n', 'P', '"0P')
 vim.keymap.set('v', 'p', '"0p')
@@ -77,8 +77,12 @@ vim.keymap.set('n', 'ml', '<C-w>l')
 -- Replace text in buffer
 vim.keymap.set('n', '<leader>s', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
+-- Quickfix list
+vim.keymap.set('n', ']t', ':cn<CR>')
+vim.keymap.set('n', '[t', ':cp<CR>')
+
 -- React specific keymaps
 vim.keymap.set('n', '<leader>ir', "iimport * as React from 'react'<Esc>", { desc = 'Import react snippet' })
-vim.keymap.set('n', '<leader>wf', 'i{return }<Esc>x%p%f(', { desc = 'Wrap function return statement into body block' })
+vim.keymap.set('n', '<leader>wf', 'i{return }<Esc>x%p%', { desc = 'Wrap function return statement into body block' })
 
 -- vim: ts=2 sts=2 sw=2 e
