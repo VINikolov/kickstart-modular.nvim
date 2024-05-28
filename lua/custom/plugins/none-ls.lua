@@ -19,6 +19,7 @@ return {
           filetypes = { 'html', 'json', 'js', 'ts', 'jsx', 'tsx', 'yaml', 'markdown' },
         },
         null_ls.builtins.formatting.black,
+        null_ls.builtins.formatting.csharpier,
 
         -- diagnostics
         -- null_ls.builtins.diagnostics.eslint_d.with {
