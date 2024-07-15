@@ -31,6 +31,8 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 -- Copy & Paste
 vim.keymap.set('n', '<leader>p', '"+p')
 vim.keymap.set('n', '<leader>P', '"+P')
+vim.keymap.set('v', '<leader>p', '"+p')
+vim.keymap.set('v', '<leader>P', '"+P')
 vim.keymap.set('n', 'p', '"0p')
 vim.keymap.set('n', 'P', '"0P')
 vim.keymap.set('v', 'p', '"0p')
