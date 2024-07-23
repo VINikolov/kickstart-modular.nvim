@@ -29,24 +29,18 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 -- vim.keymap.set('v', '<leader>p', "\"_dP")
 
 -- Copy & Paste
-vim.keymap.set('n', '<leader>p', '"+p')
-vim.keymap.set('n', '<leader>P', '"+P')
-vim.keymap.set('v', '<leader>p', '"+p')
-vim.keymap.set('v', '<leader>P', '"+P')
-vim.keymap.set('n', 'p', '"0p')
-vim.keymap.set('n', 'P', '"0P')
-vim.keymap.set('v', 'p', '"0p')
-vim.keymap.set('v', 'P', '"0P')
+vim.keymap.set({ 'n', 'v' }, '<leader>p', '"+p')
+vim.keymap.set({ 'n', 'v' }, '<leader>P', '"+P')
+vim.keymap.set({ 'n', 'v' }, 'p', '"0p')
+vim.keymap.set({ 'n', 'v' }, 'P', '"0P')
 
-vim.keymap.set('n', 'd', '"0d')
-vim.keymap.set('v', 'd', '"0d')
+vim.keymap.set({ 'n', 'v' }, 'd', '"0d')
 vim.keymap.set('n', 'D', '"0D')
 
 vim.keymap.set('n', 'x', '"0x')
 vim.keymap.set('n', 'X', '"0X')
 
-vim.keymap.set('n', '<leader>d', '"_d')
-vim.keymap.set('v', '<leader>d', '"_d')
+vim.keymap.set({ 'n', 'v' }, '<leader>d', '"_d')
 
 -- Moving around
 vim.keymap.set('n', 'J', '20j')
@@ -88,7 +82,6 @@ vim.keymap.set('n', '[t', ':cp<CR>')
 
 -- React specific keymaps
 vim.keymap.set('n', '<leader>ir', "iimport * as React from 'react'<Esc>", { desc = 'Import react snippet' })
-vim.keymap.set('n', '<leader>wf', 'i{return }<Esc>x%p%a<CR><CR><Esc>kO',
-  { desc = 'Wrap function return statement into body block' })
+vim.keymap.set('n', '<leader>wf', 'i{return }<Esc>x%p%a<CR><CR><Esc>kO', { desc = 'Wrap function return statement into body block' })
 
 -- vim: ts=2 sts=2 sw=2 e
