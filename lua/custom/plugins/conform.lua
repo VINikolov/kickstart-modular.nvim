@@ -1,5 +1,6 @@
 return {
   'stevearc/conform.nvim',
+  event = { 'BufReadPre', 'BufNewFile' },
 
   config = function()
     local conform = require 'conform'
@@ -15,13 +16,7 @@ return {
         json = { 'prettierd' },
         lua = { 'stylua' },
         python = { 'black' },
-        csharp = { 'csharpier' },
-      },
-      formatters = {
-        csharpier = {
-          command = 'dotnet-csharpier',
-          args = { '--write-stdout' },
-        },
+        csharp = { 'omnisharp' },
       },
       format_on_save = {
         lsp_fallback = true,

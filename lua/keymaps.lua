@@ -80,6 +80,9 @@ vim.keymap.set('n', '<leader>s', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 vim.keymap.set('n', ']t', ':cn<CR>')
 vim.keymap.set('n', '[t', ':cp<CR>')
 
+-- File formatting
+vim.keymap.set('n', '<leader>gf', vim.lsp.buf.format, { desc = 'Format file' })
+
 -- React specific keymaps
 vim.keymap.set('n', '<leader>ir', "iimport * as React from 'react'<Esc>", { desc = 'Import react snippet' })
 vim.keymap.set('n', '<leader>wf', 'i{return }<Esc>x%p%a<CR><CR><Esc>kO', { desc = 'Wrap function return statement into body block' })
