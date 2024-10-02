@@ -1,11 +1,12 @@
 return {
   'stevearc/conform.nvim',
-  event = { 'BufReadPre', 'BufNewFile' },
+  event = { 'BufReadPre', 'BufNewFile', 'BufWritePre' },
 
   config = function()
     local conform = require 'conform'
 
     conform.setup {
+      notify_on_error = false,
       formatters_by_ft = {
         javascript = { 'prettierd' },
         typescript = { 'prettierd' },
