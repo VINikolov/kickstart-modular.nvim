@@ -17,7 +17,7 @@ return {
         json = { 'prettierd' },
         lua = { 'stylua' },
         python = { 'black' },
-        csharp = { 'omnisharp' },
+        csharp = { 'csharpier' },
       },
       format_on_save = {
         lsp_fallback = true,
