@@ -40,4 +40,17 @@ vim.o.completeopt = 'menuone,noselect'
 -- NOTE: You should make sure your terminal supports this
 vim.o.termguicolors = true
 
+-- Terminal setup
+vim.api.nvim_create_autocmd('TermOpen', {
+  group = vim.api.nvim_create_augroup('custom-term-open', { clear = true }),
+  callback = function()
+    vim.opt.number = false
+    vim.opt.relativenumber = false
+
+    vim.cmd 'startinsert'
+  end,
+})
+
+vim.cmd 'tnoremap <Esc> <C-\\><C-n>'
+
 -- vim: ts=2 sts=2 sw=2 et

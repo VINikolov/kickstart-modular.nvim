@@ -46,8 +46,9 @@ vim.keymap.set({ 'n', 'v' }, '<leader>d', '"_d')
 vim.keymap.set('n', 'J', '20j')
 vim.keymap.set('n', 'K', '20k')
 
--- LazyGit
-vim.keymap.set('n', '<leader>gs', '<Cmd>LazyGit<CR>')
+-- Diffview
+vim.keymap.set('n', '<leader>gs', '<Cmd>DiffviewOpen<CR>')
+vim.keymap.set('n', '<leader>gg', '<Cmd>DiffviewClose<CR>')
 
 -- Move lines in view mode
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
@@ -82,6 +83,21 @@ vim.keymap.set('n', '[t', ':cp<CR>')
 
 -- File formatting
 vim.keymap.set('n', '<leader>gf', vim.lsp.buf.format, { desc = 'Format file' })
+
+-- Terminal
+local term_open_job_id = 0
+vim.keymap.set('n', '<leader>tt', function()
+  vim.cmd.vnew()
+  vim.cmd.term()
+  vim.cmd.wincmd 'J'
+  vim.api.nvim_win_set_height(0, 30)
+
+  term_open_job_id = vim.bo.channel
+end, { desc = 'Open [T]erminal' })
+
+vim.keymap.set('n', '<leader>tr', function()
+  vim.fn.chansend(term_open_job_id, { 'exec zsh\r\n' })
+end)
 
 -- React specific keymaps
 vim.keymap.set('n', '<leader>ir', "iimport * as React from 'react'<Esc>", { desc = 'Import react snippet' })

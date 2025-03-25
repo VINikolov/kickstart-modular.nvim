@@ -109,7 +109,7 @@ local servers = {
   rust_analyzer = {},
   ts_ls = {},
   html = { filetypes = { 'html', 'twig', 'hbs' } },
-  omnisharp = { filetypes = { 'cs' } },
+  csharp_ls = { filetypes = { 'cs' } },
 
   lua_ls = {
     Lua = {
@@ -133,6 +133,7 @@ local mason_lspconfig = require 'mason-lspconfig'
 
 mason_lspconfig.setup {
   ensure_installed = vim.tbl_keys(servers),
+  automatic_installation = false,
 }
 
 mason_lspconfig.setup_handlers {
