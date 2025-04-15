@@ -102,5 +102,6 @@ end)
 -- React specific keymaps
 vim.keymap.set('n', '<leader>ir', "iimport * as React from 'react'<Esc>", { desc = 'Import react snippet' })
 vim.keymap.set('n', '<leader>wf', 'i{return }<Esc>x%p%a<CR><CR><Esc>kO', { desc = 'Wrap function return statement into body block' })
+vim.keymap.set('n', '<leader>l', "viwy}Oconsole.log('<Esc>pa:', <Esc>pa)<Esc>", { desc = 'Create a console.log for the selected text' })
 
 -- vim: ts=2 sts=2 sw=2 e
